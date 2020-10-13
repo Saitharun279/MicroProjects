@@ -81,10 +81,22 @@ app.delete('/deleteVentilator',middleware.checkToken,(req,res)=>{
     console.log("Deleting Ventilator details");
     var hid = req.body.hid;
     var ventID = req.body.ventID;
+   /* var flag;
+    console.log(flag);
+    var find = db.collection('Ventilator').find({"hid":hid,"ventID":ventID}).toArray().then(result=>(flag = result));
+    console.log(flag);
+    if(flag!=[])
+    {*/
     var data = db.collection('Ventilator').deleteOne({"hid":hid,"ventID":ventID},(err,result)=>{
         res.json("Document Deleted");
+
         if(err) throw err;
     });
+    /*}
+    else{
+        res,json("Document Not Found");
+    }*/
+
 })
 
 

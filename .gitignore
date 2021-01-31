@@ -2,3 +2,5 @@ miniproject
 demoExp
 HospitalManagement/node_modules
 ChatBot/node_modules
+ChatBot/user.js
+ChatBot/service.js
